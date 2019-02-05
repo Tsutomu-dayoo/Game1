@@ -7,9 +7,17 @@
 //
 
 #include <iostream>
+#include "Game.h"
+
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Game game;
+    bool success = game.Initialize();
+    if(success)
+    {
+        printf("成功");
+        game.RunLoop();//ゲームのループを開始
+    }
+    game.Shutdown();
     return 0;
 }

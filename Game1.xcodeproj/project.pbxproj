@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7E401B952206225D00BB7E2B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E401B942206225D00BB7E2B /* main.cpp */; };
+		7E401B9D220622C900BB7E2B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401B9C220622C900BB7E2B /* OpenGL.framework */; };
+		7E401B9F220622F800BB7E2B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401B9E220622F800BB7E2B /* CoreFoundation.framework */; };
+		7E401BA8220637DC00BB7E2B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E401BA6220637DC00BB7E2B /* Game.cpp */; };
+		7E401BAD2206444E00BB7E2B /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401BAC2206444E00BB7E2B /* libSDL2-2.0.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,11 @@
 /* Begin PBXFileReference section */
 		7E401B912206225D00BB7E2B /* Game1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Game1; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E401B942206225D00BB7E2B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7E401B9C220622C900BB7E2B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		7E401B9E220622F800BB7E2B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		7E401BA6220637DC00BB7E2B /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		7E401BAC2206444E00BB7E2B /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2/2.0.9/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		7E4EA9242209F28F00B0F87E /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E401BAD2206444E00BB7E2B /* libSDL2-2.0.0.dylib in Frameworks */,
+				7E401B9F220622F800BB7E2B /* CoreFoundation.framework in Frameworks */,
+				7E401B9D220622C900BB7E2B /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,8 +53,11 @@
 		7E401B882206225D00BB7E2B = {
 			isa = PBXGroup;
 			children = (
-				7E401B932206225D00BB7E2B /* Game1 */,
+				7E4EA9242209F28F00B0F87E /* Game.h */,
+				7E401BA6220637DC00BB7E2B /* Game.cpp */,
+				7E401B942206225D00BB7E2B /* main.cpp */,
 				7E401B922206225D00BB7E2B /* Products */,
+				7E401B9B220622C800BB7E2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +69,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7E401B932206225D00BB7E2B /* Game1 */ = {
+		7E401B9B220622C800BB7E2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E401B942206225D00BB7E2B /* main.cpp */,
+				7E401BAC2206444E00BB7E2B /* libSDL2-2.0.0.dylib */,
+				7E401B9E220622F800BB7E2B /* CoreFoundation.framework */,
+				7E401B9C220622C900BB7E2B /* OpenGL.framework */,
 			);
-			path = Game1;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E401B952206225D00BB7E2B /* main.cpp in Sources */,
+				7E401BA8220637DC00BB7E2B /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +258,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../external/SDL/include",
+					"$(SRCROOT)/../external/SOIL/include",
+					"$(SRCROOT)/../external/GLEW/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../external/GLEW/lib/mac",
+					"$(SRCROOT)/../external/SDL/lib/mac",
+					"$(SRCROOT)/../external/SOIL/lib/mac",
+					/usr/local/Cellar/sdl2/2.0.9/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +279,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../external/SDL/include",
+					"$(SRCROOT)/../external/SOIL/include",
+					"$(SRCROOT)/../external/GLEW/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../external/GLEW/lib/mac",
+					"$(SRCROOT)/../external/SDL/lib/mac",
+					"$(SRCROOT)/../external/SOIL/lib/mac",
+					/usr/local/Cellar/sdl2/2.0.9/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
