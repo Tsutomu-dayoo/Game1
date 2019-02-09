@@ -36,7 +36,7 @@ private:
     SDL_Window* mWindow;
     // 何かを描画したいときはSDL_Rendererを参照する
     SDL_Renderer* mRenderer;
-    // Number of ticks since start of game
+    // ゲームが始まってからの時間
     Uint32 mTicksCount;
     // Game should continue to run
     bool mIsRunning;
@@ -44,8 +44,10 @@ private:
     // Pong specific
     // Direction of paddle
     int mPaddleDir;
+    int mPaddle2Dir;
     // Position of paddle
     Vector2 mPaddlePos;
+    Vector2 mPaddle2Pos;
     // Position of ball
     Vector2 mBallPos;
     // Velocity of ball
