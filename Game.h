@@ -34,7 +34,7 @@ private:
     
     // Window created by SDL
     SDL_Window* mWindow;
-    // Renderer for 2D drawing
+    // 何かを描画したいときはSDL_Rendererを参照する
     SDL_Renderer* mRenderer;
     // Number of ticks since start of game
     Uint32 mTicksCount;
