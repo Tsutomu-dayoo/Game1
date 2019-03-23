@@ -16,6 +16,12 @@ struct Vector2
     float y;
 };
 
+struct Ball
+{
+    Vector2 Pos;
+    Vector2 Vel;
+};
+
 class Game
 {
 public:
@@ -52,4 +58,6 @@ private:
     Vector2 mBallPos;
     // Velocity of ball
     Vector2 mBallVel;
+    
+    Ball ball[2];
 };

@@ -62,6 +62,11 @@ bool Game::Initialize()
     mBallVel.x = 200.0f;
     mBallVel.y = -235.0f;
     
+    for(int i=0;i<2;i++)
+    {
+        //複数のボールを更新できるようにする→ランダム関数を用いて
+    }
+    
     return true;//上記が問題なければtrue
 }
 
@@ -84,7 +89,7 @@ void Game::RunLoop()
 void Game::ProcessInput()
 {
     SDL_Event event;
-    while(SDL_PollEvent(&event))//キューにイベントがあればtrue 引数はSDL_Eventのポインタ
+    while (SDL_PollEvent(&event))//キューにイベントがあればtrue 引数はSDL_Eventのポインタ
     {
         switch(event.type)
         {
@@ -110,7 +115,7 @@ void Game::ProcessInput()
         mPaddleDir += 1;
     }
     mPaddle2Dir = 0;
-    if(state[SDL_SCANCODE_I])
+    if(state[SDL_SCANCODE_O])
     {
         mPaddle2Dir -= 1;
     }
@@ -249,6 +254,5 @@ void Game::GenerateOutput()
     SDL_RenderFillRect(mRenderer, &ball);
     
     SDL_RenderPresent(mRenderer);//フロントバッファとバックバッファを入れ替える 必ず描画したいものを上にmRendererに描画し終える
-    
     
 }

@@ -11,7 +11,7 @@
 		7E401B9D220622C900BB7E2B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401B9C220622C900BB7E2B /* OpenGL.framework */; };
 		7E401B9F220622F800BB7E2B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401B9E220622F800BB7E2B /* CoreFoundation.framework */; };
 		7E401BA8220637DC00BB7E2B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E401BA6220637DC00BB7E2B /* Game.cpp */; };
-		7E401BAD2206444E00BB7E2B /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401BAC2206444E00BB7E2B /* libSDL2-2.0.0.dylib */; };
+		7EE57ADA223D624D00E82349 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE57AD9223D624D00E82349 /* libSDL2-2.0.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +32,8 @@
 		7E401B9C220622C900BB7E2B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		7E401B9E220622F800BB7E2B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		7E401BA6220637DC00BB7E2B /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
-		7E401BAC2206444E00BB7E2B /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2/2.0.9/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 		7E4EA9242209F28F00B0F87E /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		7EE57AD9223D624D00E82349 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../External/SDL/lib/mac/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E401BAD2206444E00BB7E2B /* libSDL2-2.0.0.dylib in Frameworks */,
+				7EE57ADA223D624D00E82349 /* libSDL2-2.0.0.dylib in Frameworks */,
 				7E401B9F220622F800BB7E2B /* CoreFoundation.framework in Frameworks */,
 				7E401B9D220622C900BB7E2B /* OpenGL.framework in Frameworks */,
 			);
@@ -72,7 +72,7 @@
 		7E401B9B220622C800BB7E2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E401BAC2206444E00BB7E2B /* libSDL2-2.0.0.dylib */,
+				7EE57AD9223D624D00E82349 /* libSDL2-2.0.0.dylib */,
 				7E401B9E220622F800BB7E2B /* CoreFoundation.framework */,
 				7E401B9C220622C900BB7E2B /* OpenGL.framework */,
 			);
@@ -267,7 +267,10 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../external/GLEW/lib/mac",
-					"$(SRCROOT)/../external/SDL/lib/mac",
+					"$(SRCROOT)/lib/mac",
+					"$(SRCROOT)/../external/SOIL/lib/mac",
+					"/usr/local/Cellar/sdl2/2.0.9/lib\n$(SRCROOT)/../external/GLEW/lib/mac",
+					"$(SRCROOT)/lib/mac",
 					"$(SRCROOT)/../external/SOIL/lib/mac",
 					/usr/local/Cellar/sdl2/2.0.9/lib,
 				);
@@ -288,7 +291,10 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../external/GLEW/lib/mac",
-					"$(SRCROOT)/../external/SDL/lib/mac",
+					"$(SRCROOT)/lib/mac",
+					"$(SRCROOT)/../external/SOIL/lib/mac",
+					"/usr/local/Cellar/sdl2/2.0.9/lib\n$(SRCROOT)/../external/GLEW/lib/mac",
+					"$(SRCROOT)/lib/mac",
 					"$(SRCROOT)/../external/SOIL/lib/mac",
 					/usr/local/Cellar/sdl2/2.0.9/lib,
 				);
